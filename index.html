@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Davey • Developer</title>
+  <meta name="description" content="Davey — developer. Projects, links, and contact." />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:title" content="Davey • Developer" />
+  <meta property="og:description" content="Projects, links, and contact." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --fg: #eef2f7;
+      --muted: #a5b1c2;
+      --card: #12141a;
+      --link: #7dd3fc;
+      --accent: #38bdf8;
+      --ring: rgba(56,189,248,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --fg: #0b1220;
+        --muted: #556070;
+        --card: #f6f7fb;
+        --link: #0369a1;
+        --accent: #0284c7;
+        --ring: rgba(2,132,199,.25);
+      }
+    }
+    * { box-sizing: border-box }
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--link); text-decoration: none }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+      border-radius: .5rem;
+    }
+    .wrap {
+      max-width: 860px;
+      padding: 24px;
+      margin: 0 auto;
+    }
+    header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 0 8px;
+    }
+    .avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), transparent);
+      display: grid; place-items: center; overflow: hidden;
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover }
+    h1 {
+      font-size: clamp(24px, 3.2vw, 40px);
+      line-height: 1.2; margin: 0;
+      letter-spacing: .2px;
+    }
+    .subtitle { color: var(--muted); margin: 4px 0 0; font-size: 0.975rem }
+    .links {
+      display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 0;
+    }
+    .chip {
+      display: inline-flex; gap: 8px; align-items: center;
+      padding: 8px 12px; border-radius: 999px;
+      background: color-mix(in oklab, var(--card), transparent 35%);
+      border: 1px solid color-mix(in oklab, var(--fg), transparent 85%);
+      transition: transform .1s ease;
+      will-change: transform;
+    }
+    .chip:hover { transform: translateY(-1px) }
+    main { margin: 28px 0 64px }
+    section + section { margin-top: 32px }
+    h2 {
+      font-size: 1.1rem; letter-spacing: .4px;
+      margin: 0 0 12px; color: var(--muted); text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: color-mix(in oklab, var(--card), transparent 0%);
+      border: 1px solid color-mix(in oklab, var(--fg), transparent 86%);
+      border-radius: 16px; padding: 16px;
+    }
+    .card h3 {
+      margin: 0 0 6px; font-size: 1.02rem; line-height: 1.35;
+    }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem }
+    .meta {
+      display: flex; gap: 10px; align-items: center;
+      margin-top: 10px; font-size: .9rem; color: var(--muted);
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent) }
+    footer {
+      padding: 24px 0; color: var(--muted); font-size: .95rem; border-top: 1px dashed color-mix(in oklab, var(--fg), transparent 86%);
+    }
+    .small { font-size: .92rem; color: var(--muted) }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .chip:hover { transform: none }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar" aria-hidden="true">
+        <!-- Uses your GitHub avatar; falls back to initial if blocked -->
+        <img src="https://github.com/earthlingdavey.png" alt="" onerror="this.remove()" />
+        <span class="sr-only">Avatar</span>
+      </div>
+      <div>
+        <h1>Davey</h1>
+        <p class="subtitle">Developer. Shipping robust, scalable services.</p>
+        <nav class="links" aria-label="Primary">
+          <a class="chip" href="https://github.com/earthlingdavey" target="_blank" rel="noopener">
+            <span>GitHub</span>
+          </a>
+          <a class="chip" href="https://stackoverflow.com/users/6671505/davey" target="_blank" rel="noopener">
+            <span>Stack Overflow</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="about">
+        <h2 id="about">About</h2>
+        <div class="card">
+          <p class="small">
+            Software engineer with over 10 years of experience designing, developing, and maintaining enterprise-grade web services. 
+            Skilled in building reliable, scalable systems deployed on Kubernetes, and in developing tools and applications that solve real-world problems. 
+            Examples of work can be found on GitHub.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="tech">
+        <h2 id="tech">Tech</h2>
+        <div class="card">
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">JavaScript</span>
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">TypeScript</span>
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">Node.js</span>
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">Deno</span>
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">React</span>
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">Docker</span>
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">Kubernetes</span>
+            <span style="padding:6px 12px;border-radius:999px;background:color-mix(in oklab,var(--card),transparent 35%);border:1px solid color-mix(in oklab,var(--fg),transparent 85%);">WordPress</span>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="so">
+        <h2 id="so">Stack Overflow</h2>
+        <div class="card" style="display:flex;align-items:center;gap:12px;">
+          <!-- Public flair image (auto-updates) -->
+          <a href="https://stackoverflow.com/users/6671505/davey"><img src="https://stackoverflow.com/users/flair/6671505.png" width="208" height="58" alt="profile for Davey at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Davey at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+          <div class="small">I answer questions when I can. See more on my profile.</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="github-achievements">
+        <h2 id="github-achievements">GitHub Achievements</h2>
+        <div class="card" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+          <img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" alt="Pull Shark badge" width="80" height="80" loading="lazy">
+          <img src="https://github.githubassets.com/images/modules/profile/achievements/arctic-code-vault-contributor-default.png" alt="Arctic Code Vault Contributor badge" width="80" height="80" loading="lazy">
+          <img src="https://github.githubassets.com/images/modules/profile/achievements/starstruck-default.png" alt="Starstruck badge" width="80" height="80" loading="lazy">
+          <img src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png" alt="Quickdraw badge" width="80" height="80" loading="lazy">
+        </div>
+        <p class="small" style="margin-top:12px;">
+          These are some of the public <a href="https://github.com/earthlingdavey" target="_blank" rel="noopener">GitHub</a> achievements unlocked through contributions and collaboration.
+        </p>
+      </section>
+      
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div>© <span id="y"></span> Davey</div>
+        <div class="small">Built with plain HTML/CSS/JS. No cookies. No analytics.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
